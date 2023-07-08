@@ -16,21 +16,14 @@ class Solution
         for(long long int i = 0; i < n; i++){
             pq.push(-(arr[i]));
         }
-        long long int temp;
-        // int f= 0;
+        long long int first, second;
         while(pq.size() != 1){
-            temp = -pq.top();
+            first = -pq.top();
             pq.pop();
-            sum += temp + (-pq.top());
-            temp += (-pq.top());
-            // cout << "sum here was " << temp << "\n";
+            second = -pq.top();
             pq.pop();
-            pq.push(-temp);
-            // f++;
-            // cout << f
-            // if(f>100){
-            //     break;
-            // }
+            sum += first+second;
+            pq.push(-(first+second));
         }
         return sum;
     }
