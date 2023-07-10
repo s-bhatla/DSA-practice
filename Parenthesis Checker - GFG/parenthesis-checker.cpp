@@ -21,7 +21,7 @@ class Solution
             if(x[i] == '(' || x[i] == '{' || x[i] == '['){
                 s.push(x[i]);
             }
-            else if(x[i] == ')' || x[i] == '}' || x[i] == ']'){
+            else{
                 if(s.empty()){
                     return false;
                 }
