@@ -129,11 +129,11 @@ class Solution {
         }
         if(findtarget(root->right, target)){
             htburn = findtarget(root->right, target) ;
-            return max((htburn + findht(root->left) + 0), minTime(root->right, target));
+            return max((htburn + findht(root->left)), minTime(root->right, target));
         }
         if(findtarget(root->left, target)){
             htburn = findtarget(root->left, target) ;
-            return max((findht(root->right) + htburn + 0), minTime(root->left, target));
+            return max((findht(root->right) + htburn), minTime(root->left, target));
         }
         if(root->data == target){
             return findht(root)-1;
