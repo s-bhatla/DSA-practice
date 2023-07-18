@@ -104,7 +104,7 @@ class Solution {
         return max(findht(root->left)+1, findht(root->right)+1);
     }
 
-    int findtarget(Node * root, int target){ //finds the height of target node
+    int findtarget(Node * root, int target){ //finds the distance of target node from the given node, returns 0 if not found
         if(root == NULL){
             return 0;
         }
@@ -123,27 +123,21 @@ class Solution {
     int minTime(Node* root, int target) 
     {
         // Your code goes here
-        int htburn;
-        int lor = 0;
+        int htburn; //height to burn
         if(root==NULL){
             return 0;
         }
         if(findtarget(root->right, target)){
             htburn = findtarget(root->right, target) ;
-            lor = 1;
             return max((htburn + findht(root->left) + 0), minTime(root->right, target));
         }
         if(findtarget(root->left, target)){
             htburn = findtarget(root->left, target) ;
-            lor = 0;
             return max((findht(root->right) + htburn + 0), minTime(root->left, target));
-
         }
         if(root->data == target){
-            lor = -1;
             return findht(root)-1;
         }
-        
     }
 };
 
