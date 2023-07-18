@@ -131,24 +131,19 @@ class Solution {
         if(findtarget(root->right, target)){
             htburn = findtarget(root->right, target) ;
             lor = 1;
+            return max((htburn + findht(root->left) + 0), minTime(root->right, target));
         }
         if(findtarget(root->left, target)){
             htburn = findtarget(root->left, target) ;
             lor = 0;
+            return max((findht(root->right) + htburn + 0), minTime(root->left, target));
+
         }
         if(root->data == target){
             lor = -1;
-        }
-        if(lor==1){ //if target is in right subtree
-            return max((htburn + findht(root->left) + 0), minTime(root->right, target));
-        }
-        if(lor == -1){
             return findht(root)-1;
         }
-        if(lor == 0){
-            //if target is in left subtree
-            return max((findht(root->right) + htburn + 0), minTime(root->left, target));
-        }
+        
     }
 };
 
