@@ -103,9 +103,8 @@ class Solution {
         }
         return max(findht(root->left)+1, findht(root->right)+1);
     }
-    int lor = 0; //0 is left, 1 is right
-    
-    int findtarget(Node * root, int target){
+
+    int findtarget(Node * root, int target){ //finds the height of target node
         if(root == NULL){
             return 0;
         }
@@ -125,6 +124,7 @@ class Solution {
     {
         // Your code goes here
         int htburn;
+        int lor = 0;
         if(root==NULL){
             return 0;
         }
@@ -139,15 +139,10 @@ class Solution {
         if(root->data == target){
             lor = -1;
         }
-        // cout << "lor is->" << lor << " height->" << findht(root) << " htburn" << htburn<<  endl;
         if(lor==1){ //if target is in right subtree
             return max((htburn + findht(root->left) + 0), minTime(root->right, target));
         }
         if(lor == -1){
-            
-            // if(findht(root) == 1){
-            //     return 1;
-            // }
             return findht(root)-1;
         }
         if(lor == 0){
