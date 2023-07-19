@@ -113,20 +113,24 @@ class Solution{
             return search(root->left, target);
         }
     }
-    Node *og = NULL;
+    unordered_set<int> s;
     int isPairPresent(struct Node *root, int target)
     {
         //add code here.
-        if(og == NULL){
-            og = root;
-        }
+        // if(og == NULL){
+        //     og = root;
+        // }
+        
         if(root == NULL){
             return 0;    
         }
         if(isPairPresent(root->left, target)){
             return 1;
         }
-        if(search(og, target-(root->data))){
+        if(s.find(target-(root->data)) == s.end()){
+            s.insert(root->data);
+        }
+        else{
             return 1;
         }
         if(isPairPresent(root->right, target)){
