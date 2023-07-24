@@ -27,8 +27,6 @@ class Solution
                else{
                    select = dontselect;
                }
-            //   cout << "For i,j " << i << "," << j << endl;
-            //   cout << "select, dontselect " << select << "," << dontselect << endl;
                dp[i][j] = max(select, dontselect);
            }
        }
