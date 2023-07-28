@@ -11,19 +11,15 @@ class Solution {
   public:
     int maximumSumRectangle(int R, int C, vector<vector<int>> M) {
         // code here
-        int n = R;
-        int m = C;
         int max = INT_MIN;
-        int currsum, maxsum;
         for(int i = 0; i < R; i++){
             vector<int> temprow(C, 0);
             for(int j = i; j < R; j++){
-                
                 for(int k = 0; k < C; k++){
                     temprow[k] += M[j][k];
                 }
-                maxsum = INT_MIN;
-                currsum = 0;
+                int maxsum = INT_MIN;
+                int currsum = 0;
                 for(int k = 0; k < C; k++){
                     currsum = currsum + temprow[k];
                     if(currsum > maxsum){
