@@ -111,12 +111,8 @@ void insert(struct TrieNode *root, string key)
             curr = curr->children[val];
         }
     }
-    if(curr->isLeaf){
-        return;
-    }
-    else{
+    if(!curr->isLeaf){
         curr->isLeaf = true;
-        return;
     }
 }
 
