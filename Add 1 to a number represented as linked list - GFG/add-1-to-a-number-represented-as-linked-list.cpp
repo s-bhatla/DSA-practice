@@ -68,10 +68,10 @@ class Solution
         // return head of list after adding one
         Node * revhead = reverse(head);
         Node * curr = revhead;
-        if(curr->data != 9){
-            curr->data = curr->data+1;
-            return reverse(revhead);
-        }
+        // if(curr->data != 9){
+        //     curr->data = curr->data+1;
+        //     return reverse(revhead);
+        // }
         while(curr->data == 9){
             curr->data = 0;
             if(curr->next == NULL){
@@ -81,7 +81,6 @@ class Solution
                 curr->next = newnode;
                 return reverse(revhead);
             }
-            
             curr = curr->next;
         }
         
