@@ -85,10 +85,7 @@ class Solution
             curr = curr->next;
         }
         
-        if(curr->data != 9){
-            curr->data = curr->data+1;
-            return reverse(revhead);
-        }
+        curr->data = curr->data+1;
         return reverse(revhead);
     }
 };
