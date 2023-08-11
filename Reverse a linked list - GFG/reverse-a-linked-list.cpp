@@ -38,16 +38,17 @@ class Solution
         // code here
         // return head of reversed list
         Node * curr = head;
+        Node * prev = NULL;
         Node * temp = curr->next;
-        curr->next = NULL;
-        Node * prev = curr;
+        
         while(temp != NULL){
-            curr = temp->next;
-            temp->next = prev;
-            prev = temp;
-            temp = curr;
+            curr->next = prev;
+            prev = curr;
+            curr = temp;
+            temp = temp->next;
         }
-        return prev;
+        curr->next = prev;
+        return curr;
     }
     
 };
