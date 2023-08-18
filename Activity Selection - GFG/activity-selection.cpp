@@ -11,12 +11,12 @@ class Solution
     //be performed by a single person.
     
     static bool mycmp(pair<int, int> a, pair<int, int> b){
-        if(a.second < b.second){
-            return (a.second < b.second);
-        }
-        if(a.second == b.second){
-            return (a.first < b.first);
-        }
+        // if(a.second < b.second){
+        //     return (a.second < b.second);
+        // }
+        // if(a.second == b.second){
+        //     return (a.first < b.first);
+        // }
         return (a.second < b.second);
     }
     
@@ -30,11 +30,8 @@ class Solution
         int count = 0;
         sort(arr.begin(), arr.end(), mycmp);
         int prevend = -1;
-        // for(auto i : arr){
-        //     cout << i.first << " " << i.second << endl;
-        // }
+        
         for(auto i : arr){
-            // cout << "if" << i.first << endl;
             if(i.first > prevend){
                 count++;
                 prevend = i.second;
