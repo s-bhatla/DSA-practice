@@ -21,9 +21,9 @@ class Solution
         if(S.size() == 0){
             return 0;
         }
-        if(S.size() == 1){
-            return (int)S[0];
-        }
+        // if(S.size() == 1){
+        //     return (int)S[0];
+        // }
         stack<int> stk;
         
         int i = 0;
@@ -33,7 +33,6 @@ class Solution
             }
             else{
                 int a, b;
-                
                 b = stk.top();
                 stk.pop();
                 a = stk.top();
