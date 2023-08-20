@@ -18,9 +18,9 @@ class Solution
     int evaluatePostfix(string S)
     {
         // Your code here
-        if(S.size() == 0){
-            return 0;
-        }
+        // if(S.size() == 0){
+        //     return 0;
+        // }
         // if(S.size() == 1){
         //     return (int)S[0];
         // }
